@@ -5,6 +5,9 @@ namespace Drupal\search_forms\Controller;
 use Drupal\Core\Controller\ControllerBase;
 
 class SearchFormsController extends ControllerBase {
+  /**
+   * Renders the search forms page with a custom design.
+   */
   public function content() {
     $forms = [
       [
@@ -34,14 +37,26 @@ class SearchFormsController extends ControllerBase {
       ],
     ];
 
-    return [
-      '#theme' => 'search_forms',
-      '#forms' => $forms,
-      '#attached' => [
-        'library' => [
-          'search_forms/search_forms_assets',
+    $build = [
+      '#type' => 'page',
+      '#title' => 'Search Forms',
+      '#attributes' => [
+        'class' => ['search-forms-page'],
+      ],
+      'content' => [
+        '#theme' => 'search_forms',
+        '#forms' => $forms,
+        '#attached' => [
+          'library' => [
+            'search_forms/search_forms_assets',
+          ],
         ],
       ],
     ];
+
+    // Disregard the theme wrapper.
+    $build['#theme_wrappers'] = [];
+
+    return $build;
   }
 }
