@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Search Forms module.
+search_forms.settings:
+  type: config_object
+  label: 'Search Forms settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

@@ -1,0 +1,4 @@
+administer search_forms configuration:
+  title: 'Administer search_forms configuration'
+  description: 'Optional description.'
+  restrict access: true
