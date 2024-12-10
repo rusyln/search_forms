@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function search_forms_theme($existing, $type, $theme, $path) {
+  return [
+    'search_forms' => [
+      'variables' => [
+        'forms' => [],
+      ],
+      'template' => 'search-forms',
+    ],
+  ];
+}

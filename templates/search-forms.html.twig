@@ -1,0 +1,12 @@
+<div class="search-container text-center">
+  <input type="text" id="search-input" class="form-control" placeholder="Search for forms...">
+</div>
+<div class="results">
+  {% for form in forms %}
+    <div class="card" data-keywords="{{ form.keywords }}">
+      <img src="{{ form.image }}" alt="{{ form.title }}">
+      <div class="card-title">{{ form.title }}</div>
+      <div class="card-footer">View Form</div>
+    </div>
+  {% endfor %}
+</div>
